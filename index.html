@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Valentine's Day Invitation</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-image: url('hearts.jpg');
+            background-size: cover;
+            background-position: center;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+            color: white;
+        }
+        .container {
+            max-width: 600px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: rgba(0, 0, 0, 0.7);
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+        }
+        h1 {
+            color: #e91e63;
+        }
+        p {
+            color: #fff;
+            line-height: 1.6;
+        }
+        .btn {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #e91e63;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+            margin: 10px;
+        }
+        .btn:hover {
+            background-color: #c2185b;
+        }
+        .dropdown {
+            position: relative;
+            display: inline-block;
+        }
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #f9f9f9;
+            min-width: 160px;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+            z-index: 1;
+        }
+        .dropdown-content a {
+            color: black;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+        }
+        .dropdown-content a:hover {
+            background-color: #f1f1f1;
+        }
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Valentine's Day Celebration</h1>
+        <p>You're invited to celebrate love and friendship on Valentine's Day!</p>
+        <p>Date: February 14th, 2024</p>
+        <p>Time: 8:00 PM</p>
+        <p>Location: 
+            <div class="dropdown">
+                <span id="location">[To be decided]</span> 
+                <div class="dropdown-content">
+                    <a href="#" onclick="changeLocation('Jagerhof')">Jagerhof</a>
+                    <a href="#" onclick="changeLocation('Happy')">Happy</a>
+                    <a href="#" onclick="changeLocation('Freakz')">Freakz</a>
+                    <a href="#" onclick="changeLocation('Ujen Poluh')">Ujen Poluh</a>
+                    <a href="#" onclick="changeLocation('Torro Grande')">Torro Grande</a>
+                    <a href="#" onclick="changeLocation('Marmalad')">Marmalad</a>
+                </div>
+            </div>
+        </p>
+        <div id="response"></div>
+        <button class="btn" id="yesButton">Yes, I'll be there!</button>
+        <button class="btn" id="noButton">Sorry, I can't make it.</button>
+    </div>
+
+    <script>
+        function changeLocation(newLocation) {
+            document.getElementById("location").textContent = newLocation;
+        }
+
+        // Add click event listeners for Yes and No buttons
+        document.getElementById("yesButton").addEventListener("click", function() {
+            document.getElementById("response").innerHTML = "<p>Great! I am excited to see you on Valentine's Day!</p>";
+        });
+
+        document.getElementById("noButton").addEventListener("click", function() {
+            document.getElementById("response").innerHTML = "<p>I will miss you! Hopefully, we can celebrate together next time.</p>";
+        });
+    </script>
+</body>
+</html>
